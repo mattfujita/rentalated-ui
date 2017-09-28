@@ -1,0 +1,20 @@
+<form (submit)="addListing()">
+  <h1>Add New Apartment</h1>
+Number of Bathrooms: <input type="number" name="number_of_bathrooms" placeholder="Number of Bathrooms" [(ngModel)]="number_of_bathrooms" required>
+<br>
+Number of Bedrooms:<input type="number" name="number_of_bedrooms" placeholder="Number of Bathrooms" [(ngModel)]="number_of_bedrooms" required>
+<br>
+Square Footage: <input type="number" name="square_footage" placeholder="Sq. Footage" [(ngModel)]="square_footage" required>
+<br>
+Address: <input type="text" name="address" placeholder="address" [(ngModel)]="address" required>
+<br>
+City: <input type="text" name="city" placeholder="city" [(ngModel)]="city" required>
+<br>
+State: <input type="text" name="state" placeholder="state" [(ngModel)]="state" required>
+<br>
+Zip Code: <input type="text" name="zip_code" placeholder="zip code" [(ngModel)]="zip_code" required>
+<br>
+Rent: <input type="number" name="rent" placeholder="rent" [(ngModel)]="rent" required>
+<br>
+<button>Add listing</button>
+</form>

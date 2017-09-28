@@ -1,0 +1,5 @@
+<a routerLink="/">Home</a>
+<a routerLink="/login" *ngIf="!currentUser">Login</a>
+<a routerLink="/my-listings" *ngIf="currentUser">Your Listings</a>
+<a routerLink="/add-listings" *ngIf="currentUser">Add a listing</a>
+<button (click)="logout()" *ngIf="currentUser">Logout</button>
