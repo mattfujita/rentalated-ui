@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApartmentDataService } from '../apartment-data/apartment-data.service';
 import { Apartment } from '../apartment';
+import { SessionDataService } from '../session-data/session-data.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-apartment-listings',
@@ -12,8 +14,9 @@ export class ApartmentListingsComponent implements OnInit {
   apartments: Apartment[];
   error: string;
   selectedApartment: Apartment;
+  currentUser: User;
 
-  constructor(private data: ApartmentDataService) { }
+  constructor(private data: ApartmentDataService, private service: SessionDataService) { }
 
   selectApartment(apartment: Apartment) {
     this.selectedApartment = apartment;
@@ -31,6 +34,7 @@ export class ApartmentListingsComponent implements OnInit {
         () => this.error = 'Could not load apartment data'
 
       );
+    this.currentUser = this.service.currentUser; //can use this for like check
   }
 
 }

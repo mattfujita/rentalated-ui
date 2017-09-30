@@ -8,7 +8,6 @@
     </a>
 </div>
 
-<button *ngIf="selectedApartment" (click)="hideApartment()">Hide</button>
 <app-apartment-detail *ngIf="selectedApartment && selectedApartment.is_active"
   [apartment]="selectedApartment">
 </app-apartment-detail>
@@ -20,13 +19,13 @@
       </a>
     </div>
 
-    <br>
-  <button *ngIf="selectedApartment" (click)="hideApartment()">Hide</button>
+<br>
     <app-apartment-detail *ngIf="selectedApartment && selectedApartment.is_active === false"
       [apartment]="selectedApartment">
     </app-apartment-detail>
 
   <div *ngIf="selectedApartment">
+    <button *ngIf="selectedApartment" (click)="hideApartment()">Hide</button>
     <button (click)="setActive(selectedApartment.id)" *ngIf="selectedApartment.is_active === false">Activate listings</button>
     <button (click)="setActive(selectedApartment.id)" *ngIf="selectedApartment.is_active === true">Deactivate listings</button>
   </div>

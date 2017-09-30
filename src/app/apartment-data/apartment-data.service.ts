@@ -50,4 +50,14 @@ export class ApartmentDataService {
 
   }
 
+  createLike(apartment_id: number): Observable<Apartment> {
+
+    const payload = { apartment_id }
+
+    return this.http
+      .post('http://localhost:4567/api/apartments/like', payload, this.options)
+      .map(response => response.json());
+
+  }
+
 }

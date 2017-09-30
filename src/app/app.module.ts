@@ -14,9 +14,12 @@ import { ApartmentDetailComponent } from './apartment-detail/apartment-detail.co
 import { LoginComponent } from './login/login.component';
 import { MyListingsComponent } from './my-listings/my-listings.component';
 import { AddListingComponent } from './add-listing/add-listing.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ApartmentsUsersDataService } from './apartments-users-data/apartments-users-data.service';
 
 const routes: Route[] = [
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignUpComponent },
   { path: '',      component: ApartmentListingsComponent },
   { path: 'my-listings',      component: MyListingsComponent },
   { path: 'add-listings',      component: AddListingComponent }
@@ -30,7 +33,8 @@ const routes: Route[] = [
     ApartmentDetailComponent,
     LoginComponent,
     MyListingsComponent,
-    AddListingComponent
+    AddListingComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,8 @@ const routes: Route[] = [
   ],
   providers: [ 
     ApartmentDataService, 
-    SessionDataService 
+    SessionDataService ,
+    ApartmentsUsersDataService
   ],
   bootstrap: [AppComponent]
 })

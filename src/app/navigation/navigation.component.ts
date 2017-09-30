@@ -25,6 +25,11 @@ export class NavigationComponent implements OnInit {
     this.service 
       .userChanged
       .subscribe(user => this.currentUser = user);
+
+    this.service
+    .verifyUser()
+    .subscribe(user => this.currentUser = user);
+
   }
 
 }

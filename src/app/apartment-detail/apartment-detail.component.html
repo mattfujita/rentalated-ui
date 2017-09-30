@@ -1,4 +1,14 @@
 
+<div *ngIf="atUser()">
+<a routerLink="/login" >Login to like this apartment</a>
+</div>
+
+<div *ngIf="!hasLiked() && !atUser()">
+    <button (click)="liked()">Like</button>
+</div>
+
+<div>Number of Likes: {{ aptLikes }}</div>
+
 <div>
     {{ apartment.address }}  
     <br>

@@ -27,7 +27,7 @@ export class MyListingsComponent implements OnInit {
     this.data
       .setApartmentActivity(this.selectedApartment.id)
       .subscribe(
-          apartment => this.selectedApartment = apartment,
+          apartment => this.selectedApartment.is_active = apartment.is_active,
           () => this.error = 'Could not update apartment data'
       );
     

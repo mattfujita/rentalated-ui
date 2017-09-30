@@ -6,5 +6,6 @@ export class Apartment {
     state: string;
     zip: string;
     is_active: boolean;
+    user_id: number;
 
 }
